@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 // Асинхронні операції (thunks)
-export const apiGetAllContacts = createAsyncThunk(
+export const fetchContacts = createAsyncThunk(
   "contacts/getAll",
   async (_, thunkApi) => {
     try {
@@ -17,7 +17,7 @@ export const apiGetAllContacts = createAsyncThunk(
   }
 );
 
-export const apiDeleteContacts = createAsyncThunk(
+export const deleteContact = createAsyncThunk(
   "contacts/delete",
   async (contactsId, thunkApi) => {
     try {
@@ -31,7 +31,7 @@ export const apiDeleteContacts = createAsyncThunk(
   }
 );
 
-export const apiAddContacts = createAsyncThunk(
+export const addContact = createAsyncThunk(
   "contacts/add",
   async (contact, thunkApi) => {
     try {

@@ -3,7 +3,7 @@ import css from "./ContactList.module.css";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { apiGetAllContacts } from "../../redux/contactsOps";
+import { fetchContacts } from "../../redux/contactsOps";
 import { selectFilteredContacts } from "../../redux/contactsSlice";
 
 export default function ContactList() {
@@ -12,7 +12,7 @@ export default function ContactList() {
   const visibleUsers = useSelector(selectFilteredContacts);
 
   useEffect(() => {
-    dispatch(apiGetAllContacts());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   // const users = useSelector((state) => state.contacts.contacts);

@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
-import { apiAddContacts } from "../../redux/contactsOps";
+import { addContact } from "../../redux/contactsOps";
 import { useDispatch } from "react-redux";
 
 // Схема валідації
@@ -20,7 +20,7 @@ export default function ContactForm() {
   const dispatch = useDispatch();
 
   const handleSubmit = (contact, actions) => {
-    dispatch(apiAddContacts(contact));
+    dispatch(addContact(contact));
     actions.resetForm();
   };
 
