@@ -13,7 +13,6 @@ const INITIAL_STATE = {
 const contactsSlice = createSlice({
   name: "contacts",
   initialState: INITIAL_STATE,
-  reducers: {},
 
   extraReducers: (builder) =>
     builder

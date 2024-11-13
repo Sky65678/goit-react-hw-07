@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Асинхронні операції (thunks)
 export const fetchContacts = createAsyncThunk(
-  "contacts/getAll",
+  "contacts/fetchAll",
   async (_, thunkApi) => {
     try {
       const { data } = await axios.get(
@@ -18,7 +18,7 @@ export const fetchContacts = createAsyncThunk(
 );
 
 export const deleteContact = createAsyncThunk(
-  "contacts/delete",
+  "contacts/deleteContact",
   async (contactsId, thunkApi) => {
     try {
       const { data } = await axios.delete(
@@ -32,7 +32,7 @@ export const deleteContact = createAsyncThunk(
 );
 
 export const addContact = createAsyncThunk(
-  "contacts/add",
+  "contacts/addContact",
   async (contact, thunkApi) => {
     try {
       const { data } = await axios.post(
